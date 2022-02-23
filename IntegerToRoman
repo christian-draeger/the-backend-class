@@ -1,0 +1,18 @@
+package com.company;
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println("4:" + ConvertRoman(4));
+        System.out.println("25:" + ConvertRoman(25));
+        System.out.println("205:" + ConvertRoman(205));
+        System.out.println("1994:" + ConvertRoman(1994));
+    }
+
+    private static String ConvertRoman(int num) {
+        String[] ones = {"", "I", "II", "III", "IV","V","VI", "VII", "VIII", "IX"};
+        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX","LXXX", "XC"};
+        String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC","DCCC", "CM"};
+        String[] thousands = {"", "M", "MM", "MMM"};
+        return thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + ones[num % 10];
+    }
+}
